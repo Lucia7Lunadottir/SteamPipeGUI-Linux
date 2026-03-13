@@ -3,8 +3,11 @@ import tempfile
 
 class DepotManager:
     @staticmethod
-    def create_simple_vdf(app_id: str, desc: str, content_root: str, branch: str, set_live: bool) -> str:
-        depot_id = str(int(app_id) + 1) if app_id.isdigit() else "0"
+    def create_simple_vdf(app_id: str, depot_id: str, desc: str, content_root: str, branch: str, set_live: bool) -> str:
+        # Логика: используем введенный ID, либо считаем автоматически
+        final_depot_id = depot_id.strip()
+        if not final_depot_id:
+            final_depot_id = str(int(app_id) + 1) if app_id.isdigit() else "0"
 
         vdf = f""""AppBuild"
 {{
@@ -17,7 +20,7 @@ class DepotManager:
 
         vdf += f"""\t"Depots"
 \t{{
-\t\t"{depot_id}"
+\t\t"{final_depot_id}"
 \t\t{{
 \t\t\t"FileMapping"
 \t\t\t{{

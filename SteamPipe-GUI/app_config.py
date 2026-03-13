@@ -12,6 +12,7 @@ class AppConfig:
     steamcmd_path: str = ""
     default_content_path: str = ""
     last_appid: str = ""
+    last_depot_id: str = ""
     last_branch: str = "default"
     set_live_after_upload: bool = False
     log_max_lines: int = 500

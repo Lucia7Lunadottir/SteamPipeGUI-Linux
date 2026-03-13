@@ -186,6 +186,7 @@ class MainWindow(QMainWindow):
         title = QLabel("Build & Upload"); title.setObjectName("PanelTitle"); l.addWidget(title)
 
         self.f_appid = QLineEdit()
+        self.f_appdepot = QLineEdit()
         self.f_desc = QLineEdit()
         self.f_content = QLineEdit()
         self.btn_browse_content = QPushButton("Browse..."); self.btn_browse_content.setProperty("class", "Secondary")
@@ -201,6 +202,7 @@ class MainWindow(QMainWindow):
         self.chk_live.setStyleSheet("color: #aaa; margin-top: 10px;")
 
         self._field_row("App ID", self.f_appid, l)
+        self._field_row("App Depot", self.f_appdepot, l)
         self._field_row("Build description", self.f_desc, l)
         self._field_row("Content folder", c_row, l)
         self._field_row("Branch", self.cb_branch, l)
@@ -242,10 +244,26 @@ class MainWindow(QMainWindow):
         self.btn_clear = QPushButton("Clear log"); self.btn_clear.setProperty("class", "Secondary")
         self.btn_clear.clicked.connect(self.log_area.clear)
 
+        self.btn_get_sdk = QPushButton("Get SDK from path"); self.btn_get_sdk.setProperty("class", "Secondary")
+        self.btn_get_sdk.clicked.connect(self.get_sdk_path)
+
         btn_row = QHBoxLayout(); btn_row.setContentsMargins(0, 16, 0, 0)
-        btn_row.addWidget(self.btn_save); btn_row.addWidget(self.btn_clear); btn_row.addStretch()
+        btn_row.addWidget(self.btn_save); btn_row.addWidget(self.btn_clear); btn_row.addWidget(self.btn_get_sdk); btn_row.addStretch()
         l.addLayout(btn_row)
         return w
+
+    def get_sdk_path(self):
+        import os
+        # Определяем базовую директорию приложения (например, /opt/steampipe-gui)
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+
+        # Формируем пути относительно папки со скриптом
+        local_sdk = os.path.join(base_dir, "steamworks_sdk/sdk")
+        local_steamcmd = os.path.join(local_sdk, "tools/ContentBuilder/builder_linux/steamcmd.sh")
+
+        # Устанавливаем пути в соответствующие поля (используя имена из твоего MainWindow)
+        self.f_sdk.setText(local_sdk)
+        self.f_steamcmd.setText(local_steamcmd)
 
     def switch_panel(self, index, active_btn):
         self.stack.setCurrentIndex(index)
@@ -271,14 +289,20 @@ class MainWindow(QMainWindow):
         self.btn_login.setEnabled(True)
 
     def do_build(self):
-        if not self.f_appid.text().strip() or not self.f_content.text().strip():
+        app_id = self.f_appid.text().strip()
+        depot_id = self.f_appdepot.text().strip() # Может быть пустым
+        content = self.f_content.text().strip()
+
+        if not app_id or not content:
             self.append_log("[ERROR] App ID and Content folder are required.")
             return
+
         self.btn_build.setEnabled(False)
         self.steam.build(
-            self.f_appid.text().strip(),
+            app_id,
+            depot_id, # Передаем (даже если пустая строка)
             self.f_desc.text().strip(),
-            self.f_content.text().strip(),
+            content,
             self.cb_branch.currentText(),
             self.chk_live.isChecked()
         )
@@ -312,6 +336,7 @@ class MainWindow(QMainWindow):
     def restore_fields(self):
         self.f_user.setText(self.config.last_username)
         self.f_appid.setText(self.config.last_appid)
+        self.f_appdepot.setText(self.config.last_depot_id)
         self.f_content.setText(self.config.default_content_path)
         self.cb_branch.setCurrentText(self.config.last_branch)
         self.chk_live.setChecked(self.config.set_live_after_upload)
@@ -338,6 +363,7 @@ class MainWindow(QMainWindow):
     def closeEvent(self, event):
         self.config.last_username = self.f_user.text()
         self.config.last_appid = self.f_appid.text()
+        self.config.last_depot_id = self.f_appdepot.text()
         self.config.default_content_path = self.f_content.text()
         self.config.last_branch = self.cb_branch.currentText()
         self.config.set_live_after_upload = self.chk_live.isChecked()

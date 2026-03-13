@@ -67,7 +67,7 @@ class SteamCmdWrapper(QObject):
             return
 
         try:
-            vdf_path = DepotManager.create_simple_vdf(app_id, desc, content_path, branch, set_live)
+            vdf_path = DepotManager.create_simple_vdf(app_id, depot_id, desc, content_path, branch, set_live)
             self.log(f"[INFO] VDF created: {vdf_path}")
         except Exception as e:
             self.log(f"[ERROR] VDF error: {e}")
