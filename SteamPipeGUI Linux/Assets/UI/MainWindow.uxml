@@ -26,9 +26,10 @@
                         <ui:Button name="btn-do-logout" text="Logout" class="secondary-button"/>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="panel-build" class="panel">
+                <ui:VisualElement name="panel-build" class="panel" style="display: flex;">
                     <ui:Label text="Build &amp; Upload" class="panel-title"/>
                     <ui:TextField name="field-appid" label="App ID" class="input-field"/>
+                    <ui:TextField name="field-depotid" label="Depot ID" class="input-field"/>
                     <ui:TextField name="field-build-desc" label="Build description" class="input-field"/>
                     <ui:VisualElement class="field-with-button">
                         <ui:TextField name="field-content-path" label="Content folder" class="input-field input-field--grow"/>
@@ -38,7 +39,7 @@
                     <ui:Toggle name="toggle-live" label="Set live after upload" class="toggle-field"/>
                     <ui:Button name="btn-start-build" text="Start build" class="primary-button"/>
                 </ui:VisualElement>
-                <ui:VisualElement name="panel-settings" class="panel">
+                <ui:VisualElement name="panel-settings" class="panel" style="display: none;">
                     <ui:Label text="Settings" class="panel-title"/>
                     <ui:Label text="Steamworks SDK" class="settings-section-label"/>
                     <ui:VisualElement class="field-with-button">

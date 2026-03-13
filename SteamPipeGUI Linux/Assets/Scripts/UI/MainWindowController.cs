@@ -179,6 +179,7 @@ public class MainWindowController : MonoBehaviour
     private async void OnStartBuildClicked()
     {
         var appId       = _root.Q<TextField>("field-appid").value.Trim();
+        var depotId       = _root.Q<TextField>("field-depotid").value.Trim();
         var description = _root.Q<TextField>("field-build-desc").value.Trim();
         var contentPath = _root.Q<TextField>("field-content-path").value.Trim();
         var branch      = _root.Q<DropdownField>("dropdown-branch").value;
