@@ -17,7 +17,6 @@ source=('main.py'
 sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
 
 package() {
-package() {
     # Создаем директорию программы в /opt/
     install -dm755 "$pkgdir/opt/$pkgname"
 
