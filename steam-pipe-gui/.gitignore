@@ -1,0 +1,19 @@
+# makepkg build artifacts
+pkg/
+src/
+*.pkg.tar.zst
+*.pkg.tar.xz
+*.pkg.tar.gz
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Steamworks SDK — проприетарный, нельзя публиковать
+steamworks_sdk/
+
+# Steam брендинг (торговые марки Valve)
+SteamLogo_Dark.png
+SteamLogo_Light.png
+SteamLogo_Dark\ 1.png
