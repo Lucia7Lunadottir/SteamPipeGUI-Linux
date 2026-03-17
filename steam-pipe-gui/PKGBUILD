@@ -4,7 +4,7 @@ pkgver=1.1.0
 pkgrel=1
 pkgdesc="A PyQt6 GUI for managing and uploading builds via SteamPipe (steamcmd)"
 arch=('any')
-url="https://github.com/lucial/steam-pipe-gui"
+url="https://github.com/7Lucia7Lokidottir7/SteamPipeGUI-Linux"
 license=('GPL-3.0-only')
 depends=('python' 'python-pyqt6')
 optdepends=(
@@ -13,11 +13,12 @@ optdepends=(
 )
 # Steamworks SDK (требует аккаунт Steamworks Partner):
 # https://partner.steamgames.com/downloads/steamworks_sdk.zip
-source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('SKIP')
+_srcname="SteamPipeGUI-Linux"
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz")
+sha256sums=('a6c8437771d4f2f54bbef6c0cfb627dc150fbc581d1b129d0188c81b8a49b973')
 
 package() {
-    cd "$srcdir/$pkgname-$pkgver"
+    cd "$srcdir/$_srcname-$pkgver/steam-pipe-gui"
 
     # Директория приложения
     install -dm755 "$pkgdir/opt/$pkgname"
