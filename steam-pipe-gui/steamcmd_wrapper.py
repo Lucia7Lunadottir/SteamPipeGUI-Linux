@@ -61,7 +61,7 @@ class SteamCmdWrapper(QObject):
 
         self.process.start(self.steamcmd_path, args)
 
-    def build(self, app_id, desc, content_path, branch, set_live):
+    def build(self, app_id, depot_id, desc, content_path, branch, set_live):
         if not self.is_logged_in:
             self.log("[ERROR] Please log in first.")
             return
