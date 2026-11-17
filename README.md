@@ -9,7 +9,11 @@ Written in Python + PyQt6.
 
 ---
 
-<img width="955" height="734" alt="SteamPipe GUI" src="https://github.com/user-attachments/assets/da364fdd-e808-469c-86dc-199f4b292308" />
+![Build & upload](docs/screenshots/build.png)
+
+| Login | Settings |
+|---|---|
+| ![Login](docs/screenshots/login.png) | ![Settings](docs/screenshots/settings.png) |
 
 ## Features
 
