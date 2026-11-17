@@ -98,10 +98,17 @@ class BuiltinTheme(ThemeBackend):
 
 
 class KitTheme(ThemeBackend):
+    QT_API = ("ThemeManager", "theme_color", "pick_theme")
+    THEMES_API = ("SYSTEM", "THEMES", "choice")
+
     def __init__(self, app: QApplication, template: str):
         super().__init__(app, template)
         from equestria_kit import qt as kit_qt, themes as kit_themes
         self._qt, self._themes = kit_qt, kit_themes
+        missing = [f"qt.{n}" for n in self.QT_API if not hasattr(kit_qt, n)]
+        missing += [f"themes.{n}" for n in self.THEMES_API if not hasattr(kit_themes, n)]
+        if missing:   # старая версия библиотеки — лучше встроенная тема, чем падение позже
+            raise RuntimeError("equestria-qt-kit is too old, missing " + ", ".join(missing))
         self._manager = kit_qt.ThemeManager(app, template)
         self._manager.on_change(lambda _theme: self.changed.emit())
 
@@ -112,11 +119,17 @@ class KitTheme(ThemeBackend):
         return [("", self._themes.SYSTEM)] + [(name, name) for name in self._themes.THEMES]
 
     def current_choice(self) -> str:
-        chosen = self._themes.choice()
+        try:
+            chosen = self._themes.choice()
+        except Exception:  # noqa: BLE001 — испорченный файл выбора темы
+            return self._themes.SYSTEM
         return chosen if chosen in self._themes.THEMES else self._themes.SYSTEM
 
     def choose(self, value: str) -> None:
-        self._manager.apply(self._qt.pick_theme(value))
+        try:
+            self._manager.apply(self._qt.pick_theme(value))
+        except Exception as error:  # noqa: BLE001 — тема не должна ронять приложение
+            print(f"[theme] cannot apply theme {value!r}: {error}")
 
 
 def create(app: QApplication) -> ThemeBackend:
@@ -125,6 +138,9 @@ def create(app: QApplication) -> ThemeBackend:
     try:
         import equestria_kit.qt  # noqa: F401 — проверяем, установлена ли библиотека
     except ImportError:
+        return BuiltinTheme(app, template)   # обычная установка из AUR — библиотеки нет
+    except Exception as error:  # noqa: BLE001 — библиотека есть, но не загружается
+        print(f"[theme] equestria-qt-kit failed to load, using built-in theme: {error}")
         return BuiltinTheme(app, template)
     try:
         return KitTheme(app, template)
