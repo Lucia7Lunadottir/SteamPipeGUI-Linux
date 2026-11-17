@@ -1,0 +1,54 @@
+QWidget { font-size: 13px; }
+QMainWindow, #Central { background: @base@; color: @text@; }
+
+#Header { background: @mantle@; border-bottom: 1px solid @surface2@; }
+#Title { font-size: 19px; font-weight: bold; color: @accent@; }
+#Status { color: @subtext@; }
+#Status[state="ok"] { color: @green@; }
+#Status[state="error"] { color: @red@; }
+
+#Sidebar { background: @mantle@; border-right: 1px solid @surface2@; }
+#Sidebar QPushButton { background: transparent; color: @subtext@; text-align: left;
+    padding: 9px 12px; border: none; border-radius: 6px; }
+#Sidebar QPushButton:hover { background: @surface1@; color: @text@; }
+#Sidebar QPushButton:checked { background: @accent/40@; color: @text@; font-weight: bold; }
+#Version { color: @subtext@; font-size: 11px; }
+
+#PageTitle { font-size: 18px; font-weight: bold; color: @accent@; }
+#Hint { color: @subtext@; font-size: 12px; }
+#Warning { color: @yellow@; font-size: 12px; }
+#ErrorText { color: @red@; }
+#OkText { color: @green@; }
+
+QLineEdit, QComboBox, QSpinBox, QPlainTextEdit, QTableWidget {
+    background: @surface0@; border: 1px solid @surface2@; border-radius: 4px;
+    color: @text@; padding: 5px; selection-background-color: @accent/90@; }
+QLineEdit:focus, QComboBox:focus, QSpinBox:focus, QTableWidget:focus { border: 1px solid @accent@; }
+QLineEdit[invalid="true"] { border: 1px solid @red@; }
+QTableWidget { padding: 0; gridline-color: @surface2@; }
+QHeaderView::section { background: @mantle@; color: @subtext@; border: none;
+    border-bottom: 1px solid @surface2@; padding: 5px; }
+
+QPushButton { background: @surface0@; border: 1px solid @surface2@; border-radius: 6px;
+    color: @text@; padding: 7px 14px; }
+QPushButton:hover { border-color: @accent@; }
+QPushButton:disabled { color: @subtext@; border-color: @surface1@; }
+QPushButton[role="primary"] { background: @accent@; color: @on_accent@; border: 1px solid @accent@;
+    font-weight: bold; padding: 8px 22px; }
+QPushButton[role="primary"]:hover { background: @accent_hover@; }
+QPushButton[role="primary"]:disabled { background: @surface1@; color: @subtext@; border-color: @surface1@; }
+QPushButton[role="danger"] { color: @red@; border-color: @red/120@; }
+
+#TaskBar { background: @mantle@; border-top: 1px solid @surface2@; }
+#LogHeader { color: @subtext@; font-weight: bold; font-size: 11px; letter-spacing: 1px; }
+#LogArea { background: @crust@; border: none; font-family: monospace; }
+
+/* Стрелки QSpinBox: под QSS Fusion их не рисует — кнопки и SVG-стрелки в цвет темы задаём сами */
+QSpinBox QLineEdit { border: none; background: transparent; }   /* поле ввода лежит поверх рамки — не закрывать её */
+QSpinBox::up-button, QSpinBox::down-button { subcontrol-origin: border; width: 18px;
+    background: @surface1@; border-left: 1px solid @surface2@; }
+QSpinBox::up-button { subcontrol-position: top right; border-top-right-radius: 4px; }
+QSpinBox::down-button { subcontrol-position: bottom right; border-bottom-right-radius: 4px; }
+QSpinBox::up-button:hover, QSpinBox::down-button:hover { background: @accent/90@; }
+QSpinBox::up-arrow { image: url(@svg:@ICONS@/arrow_up.svg@); width: 9px; height: 6px; }
+QSpinBox::down-arrow { image: url(@svg:@ICONS@/arrow_down.svg@); width: 9px; height: 6px; }

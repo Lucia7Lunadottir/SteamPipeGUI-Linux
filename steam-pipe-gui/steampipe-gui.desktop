@@ -10,6 +10,8 @@ Name[pl]=SteamPipe GUI
 Name[uk]=SteamPipe GUI
 Name[zh]=SteamPipe GUI
 Name[ja]=SteamPipe GUI
+Name[zh_TW]=SteamPipe GUI
+Name[ko]=SteamPipe GUI
 
 Comment=Manage and upload Steam builds via steamcmd
 Comment[en]=Manage and upload Steam builds via steamcmd
@@ -22,9 +24,10 @@ Comment[pl]=Zarządzaj i przesyłaj buildy Steam przez steamcmd
 Comment[uk]=Керування та завантаження білдів у Steam через steamcmd
 Comment[zh]=通过 steamcmd 管理和上传 Steam 构建版本
 Comment[ja]=steamcmd経由でSteamビルドを管理・アップロード
+Comment[zh_TW]=透過 steamcmd 管理和上傳 Steam 建置版本
+Comment[ko]=steamcmd로 Steam 빌드를 관리하고 업로드
 
-Exec=python3 /opt/steampipe-gui/main.py
-Path=/opt/steampipe-gui
+Exec=steampipe-gui
 Icon=steampipe-gui-logo
 Terminal=false
 Type=Application
