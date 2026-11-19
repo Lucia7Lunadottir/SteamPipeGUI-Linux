@@ -132,5 +132,14 @@
   "log.clear": "Leeren",
   "log.save_failed": "Protokoll konnte nicht gespeichert werden: {error}",
   "quit.title": "Upload läuft",
-  "quit.busy": "steamcmd arbeitet noch. Abbrechen und beenden?"
+  "quit.busy": "steamcmd arbeitet noch. Abbrechen und beenden?",
+  "build.howto": "So lädst du einen Build hoch: 1) Melde dich auf der Anmeldeseite bei Steam an (die Bestätigung am Handy ist nur einmal nötig); 2) gib die App-ID des Spiels ein; 3) klicke auf „Depot hinzufügen“ – es erscheint eine Zeile mit der Depot-ID (App-ID + 1, dann +2, +3 …) – und wähle den Ordner mit dem fertigen Build; 4) klicke auf „Build hochladen“.",
+  "build.app_id_tip": "Die Nummer deines Spiels in Steam (sichtbar in Steamworks und in der URL der Store-Seite). Das ist nicht die Depot-ID.",
+  "build.description_tip": "Eine Notiz für dich selbst. Nur auf der Build-Seite in Steamworks sichtbar.",
+  "build.depots_tip": "Ein Depot ist eine „Kiste“ mit den Spieldateien auf den Steam-Servern. Ein Spiel kann mehrere haben (Windows, Linux, DLC); meist reicht eins.",
+  "depots.id_tip": "Die Depot-Nummer. Steamworks vergibt sie (SteamPipe → Depots), meist App-ID + 1: 4390841 für Spiel 4390840. „Depot hinzufügen“ trägt die nächste Nummer ein; weichen deine IDs ab, korrigiere sie von Hand.",
+  "build.set_live_tip": "Den hochgeladenen Build sofort einem Branch zuweisen. Ohne Haken kannst du das später auf der Build-Seite in Steamworks tun.",
+  "build.docs": "Steamworks-Dokumentation",
+  "build.docs_upload": "Build zu Steam hochladen",
+  "build.docs_depots": "Depots und Apps"
 }

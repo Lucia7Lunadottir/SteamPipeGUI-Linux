@@ -132,5 +132,14 @@
   "log.clear": "清空",
   "log.save_failed": "無法儲存日誌：{error}",
   "quit.title": "正在上傳",
-  "quit.busy": "steamcmd 仍在執行。要停止並退出嗎？"
+  "quit.busy": "steamcmd 仍在執行。要停止並退出嗎？",
+  "build.howto": "如何上傳建置：1) 在登入頁面登入 Steam（手機確認只需一次）；2) 填寫遊戲的 App ID；3) 按下「新增 depot」，會出現已填好 Depot ID 的一列（App ID + 1，之後依序 +2、+3…），然後選擇已完成建置的資料夾；4) 按下「上傳構建」。",
+  "build.app_id_tip": "您的遊戲在 Steam 中的編號（可在 Steamworks 與商店頁面網址中看到）。它不是 Depot ID。",
+  "build.description_tip": "給自己看的備註，僅顯示在 Steamworks 的建置頁面。",
+  "build.depots_tip": "Depot（倉庫）是 Steam 伺服器上存放遊戲檔案的「箱子」。一款遊戲可以有多個（Windows、Linux、DLC），通常一個就夠了。",
+  "depots.id_tip": "Depot 編號，由 Steamworks（SteamPipe → Depots）配發，通常為 App ID + 1（遊戲 4390840 對應 4390841）。「新增 depot」會自動填入下一個編號；若您的 ID 不同，請手動修改。",
+  "build.set_live_tip": "上傳後立即將建置指派到分支。不勾選則可稍後在 Steamworks 建置頁面指派。",
+  "build.docs": "Steamworks 文件",
+  "build.docs_upload": "向 Steam 上傳建置",
+  "build.docs_depots": "Depot 與應用程式"
 }

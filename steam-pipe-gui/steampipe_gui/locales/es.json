@@ -132,5 +132,14 @@
   "log.clear": "Limpiar",
   "log.save_failed": "No se pudo guardar el registro: {error}",
   "quit.title": "Subida en curso",
-  "quit.busy": "steamcmd sigue en ejecución. ¿Detenerlo y salir?"
+  "quit.busy": "steamcmd sigue en ejecución. ¿Detenerlo y salir?",
+  "build.howto": "Cómo subir una compilación: 1) inicia sesión en Steam en la página de acceso (la confirmación en el móvil solo hace falta una vez); 2) indica el App ID del juego; 3) pulsa «Añadir depósito» — aparece una fila con el ID del depósito (App ID + 1, luego +2, +3…) — y elige la carpeta con la compilación terminada; 4) pulsa «Subir compilación».",
+  "build.app_id_tip": "El número de tu juego en Steam (visible en Steamworks y en la URL de la página del juego). No es el ID del depósito.",
+  "build.description_tip": "Una nota para ti. Solo se ve en la página de compilaciones de Steamworks.",
+  "build.depots_tip": "Un depósito (depot) es una «caja» con los archivos del juego en los servidores de Steam. Un juego puede tener varios (Windows, Linux, DLC); normalmente basta uno.",
+  "depots.id_tip": "El número del depósito. Lo asigna Steamworks (SteamPipe → Depots), normalmente App ID + 1: 4390841 para el juego 4390840. «Añadir depósito» rellena el siguiente número; si tus ID son otros, corrígelo a mano.",
+  "build.set_live_tip": "Asignar la compilación subida a una rama de inmediato. Sin la casilla, podrás hacerlo después en la página de compilaciones de Steamworks.",
+  "build.docs": "Documentación de Steamworks",
+  "build.docs_upload": "Subir una compilación a Steam",
+  "build.docs_depots": "Depósitos y aplicaciones"
 }

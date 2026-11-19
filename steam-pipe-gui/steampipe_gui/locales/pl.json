@@ -132,5 +132,14 @@
   "log.clear": "Wyczyść",
   "log.save_failed": "Nie udało się zapisać dziennika: {error}",
   "quit.title": "Trwa wysyłanie",
-  "quit.busy": "steamcmd nadal pracuje. Zatrzymać go i wyjść?"
+  "quit.busy": "steamcmd nadal pracuje. Zatrzymać go i wyjść?",
+  "build.howto": "Jak wysłać build: 1) zaloguj się do Steam na stronie logowania (potwierdzenie w telefonie jest potrzebne tylko raz); 2) podaj App ID gry; 3) kliknij „Dodaj depot” — pojawi się wiersz z ID depozytu (App ID + 1, potem +2, +3…) — i wybierz folder z gotowym buildem; 4) kliknij „Wyślij build”.",
+  "build.app_id_tip": "Numer Twojej gry w Steam (widoczny w Steamworks i w adresie strony gry). To nie jest ID depozytu.",
+  "build.description_tip": "Notatka dla Ciebie. Widoczna tylko na stronie buildów w Steamworks.",
+  "build.depots_tip": "Depozyt (depot) to „pudełko” z plikami gry na serwerach Steam. Gra może mieć ich kilka (Windows, Linux, DLC); zwykle wystarczy jeden.",
+  "depots.id_tip": "Numer depozytu. Nadaje go Steamworks (SteamPipe → Depots), zwykle App ID + 1: 4390841 dla gry 4390840. „Dodaj depot” wstawia kolejny numer; jeśli Twoje ID są inne, popraw je ręcznie.",
+  "build.set_live_tip": "Od razu przypisz wysłany build do gałęzi. Bez zaznaczenia możesz to zrobić później na stronie buildów w Steamworks.",
+  "build.docs": "Dokumentacja Steamworks",
+  "build.docs_upload": "Wysyłanie builda do Steam",
+  "build.docs_depots": "Depozyty i aplikacje"
 }

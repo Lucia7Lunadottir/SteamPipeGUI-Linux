@@ -17,6 +17,8 @@ from ..vdf import ProfileValidator, VdfImporter
 from .pages import Page
 from .widgets import button
 
+DOCS_UPLOAD_URL = "https://partner.steamgames.com/doc/sdk/uploading"
+DOCS_DEPOTS_URL = "https://partner.steamgames.com/doc/store/application/depots"
 BUILDS_URL = "https://partner.steamgames.com/apps/builds/{app_id}"
 
 
@@ -61,6 +63,7 @@ class DepotsTable(QWidget):
 
     def retranslate(self) -> None:
         self.table.setHorizontalHeaderLabels([tr("depots.id"), tr("depots.folder"), tr("depots.exclusions")])
+        self.table.horizontalHeaderItem(self.COL_ID).setToolTip(tr("depots.id_tip"))
         self.table.horizontalHeaderItem(self.COL_ROOT).setToolTip(tr("depots.folder_tip"))
         self.table.horizontalHeaderItem(self.COL_EXCL).setToolTip(tr("depots.exclusions_tip"))
         self.btn_add.setText(tr("depots.add"))
@@ -185,11 +188,15 @@ class BuildPage(Page):
         self.live_hint = self.label("build.live_hint", "Hint")
         self.branch_warning = self.label("build.branch_default_warning", "Warning")
 
+        self.howto = self.label("build.howto", "Hint")
+        self.docs_links = QLabel()
+        self.docs_links.setOpenExternalLinks(True)
+
         form = self.form()
         self.row(form, "build.profile", prof_row)
-        self.row(form, "build.app_id", self.f_app)
-        self.row(form, "build.description", self.f_desc)
-        self.row(form, "build.depots", self.depots)
+        self.lbl_app = self.row(form, "build.app_id", self.f_app)
+        self.lbl_desc = self.row(form, "build.description", self.f_desc)
+        self.lbl_depots = self.row(form, "build.depots", self.depots)
         form.addRow("", self.chk_preview)
         form.addRow("", live_row)
         form.addRow("", self.branch_warning)
@@ -210,6 +217,8 @@ class BuildPage(Page):
         self.result.setWordWrap(True)
         self.result.setTextInteractionFlags(Qt.TextInteractionFlag.TextSelectableByMouse)
 
+        self.body.addWidget(self.howto)
+        self.body.addWidget(self.docs_links)
         self.body.addLayout(form)
         self.body.addSpacing(4)
         self.body.addLayout(actions)
@@ -404,8 +413,18 @@ class BuildPage(Page):
         self.btn_delete.setText(tr("profile.delete"))
         self.btn_import.setText(tr("profile.import"))
         self.btn_import.setToolTip(tr("profile.import_tip"))
+        self.docs_links.setText(
+            f'{tr("build.docs")}: <a href="{DOCS_UPLOAD_URL}">{tr("build.docs_upload")} ↗</a> · '
+            f'<a href="{DOCS_DEPOTS_URL}">{tr("build.docs_depots")} ↗</a>')
         self.f_app.setPlaceholderText("480")
         self.f_desc.setPlaceholderText(tr("build.description_placeholder"))
+        for w in (self.lbl_app, self.f_app):
+            w.setToolTip(tr("build.app_id_tip"))
+        for w in (self.lbl_desc, self.f_desc):
+            w.setToolTip(tr("build.description_tip"))
+        self.lbl_depots.setToolTip(tr("build.depots_tip"))
+        self.chk_live.setToolTip(tr("build.set_live_tip"))
+        self.cb_branch.setToolTip(tr("build.set_live_tip"))
         self.chk_preview.setText(tr("build.preview"))
         self.chk_preview.setToolTip(tr("build.preview_tip"))
         self.chk_live.setText(tr("build.set_live"))

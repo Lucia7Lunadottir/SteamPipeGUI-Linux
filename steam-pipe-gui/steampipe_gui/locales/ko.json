@@ -132,5 +132,14 @@
   "log.clear": "지우기",
   "log.save_failed": "로그를 저장할 수 없습니다: {error}",
   "quit.title": "업로드 진행 중",
-  "quit.busy": "steamcmd가 아직 실행 중입니다. 중지하고 종료할까요?"
+  "quit.busy": "steamcmd가 아직 실행 중입니다. 중지하고 종료할까요?",
+  "build.howto": "빌드 업로드 방법: 1) 로그인 페이지에서 Steam에 로그인합니다(휴대폰 승인은 처음 한 번만 필요). 2) 게임의 App ID를 입력합니다. 3) '디포 추가'를 누르면 디포 ID(App ID + 1, 이어서 +2, +3…)가 채워진 줄이 생기며, 완성된 빌드 폴더를 선택합니다. 4) '빌드 업로드'를 누릅니다.",
+  "build.app_id_tip": "Steam에서의 게임 번호입니다(Steamworks와 상점 페이지 URL에서 볼 수 있음). 디포 ID가 아닙니다.",
+  "build.description_tip": "본인을 위한 메모입니다. Steamworks 빌드 페이지에서만 보입니다.",
+  "build.depots_tip": "디포는 Steam 서버에 있는 게임 파일 '상자'입니다. 한 게임에 여러 개(Windows, Linux, DLC)가 있을 수 있지만 보통 하나면 충분합니다.",
+  "depots.id_tip": "디포 번호입니다. Steamworks(SteamPipe → Depots)가 할당하며 보통 App ID + 1입니다(게임 4390840의 경우 4390841). '디포 추가'를 누르면 다음 번호가 채워집니다. ID가 다르면 직접 수정하세요.",
+  "build.set_live_tip": "업로드한 빌드를 바로 브랜치에 지정합니다. 체크하지 않으면 나중에 Steamworks 빌드 페이지에서 지정할 수 있습니다.",
+  "build.docs": "Steamworks 문서",
+  "build.docs_upload": "Steam에 빌드 업로드",
+  "build.docs_depots": "디포와 앱"
 }

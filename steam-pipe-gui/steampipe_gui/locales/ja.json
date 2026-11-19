@@ -132,5 +132,14 @@
   "log.clear": "クリア",
   "log.save_failed": "ログを保存できません: {error}",
   "quit.title": "アップロード中",
-  "quit.busy": "steamcmd はまだ実行中です。停止して終了しますか？"
+  "quit.busy": "steamcmd はまだ実行中です。停止して終了しますか？",
+  "build.howto": "ビルドのアップロード方法：1) ログインページでSteamにログインします（スマホでの承認は初回のみ）。2) ゲームのApp IDを入力します。3)「デポを追加」を押すとデポID（App ID + 1、続いて +2、+3…）の行が追加されるので、完成したビルドのフォルダを選びます。4)「ビルドをアップロード」を押します。",
+  "build.app_id_tip": "Steamでのゲームの番号です（SteamworksやストアページのURLで確認できます）。デポIDではありません。",
+  "build.description_tip": "自分用のメモです。Steamworksのビルドページにのみ表示されます。",
+  "build.depots_tip": "デポとは、Steamのサーバー上にあるゲームファイルの「箱」です。1つのゲームに複数（Windows、Linux、DLC）ある場合もありますが、通常は1つで十分です。",
+  "depots.id_tip": "デポの番号です。Steamworks（SteamPipe → Depots）が割り当て、通常は App ID + 1 です（ゲーム 4390840 なら 4390841）。「デポを追加」で次の番号が入ります。IDが異なる場合は手動で修正してください。",
+  "build.set_live_tip": "アップロードしたビルドをすぐにブランチへ割り当てます。チェックしない場合は、後でSteamworksのビルドページで割り当てられます。",
+  "build.docs": "Steamworks ドキュメント",
+  "build.docs_upload": "Steamへのビルドのアップロード",
+  "build.docs_depots": "デポとアプリ"
 }

@@ -132,5 +132,14 @@
   "log.clear": "清空",
   "log.save_failed": "无法保存日志：{error}",
   "quit.title": "正在上传",
-  "quit.busy": "steamcmd 仍在运行。要停止并退出吗？"
+  "quit.busy": "steamcmd 仍在运行。要停止并退出吗？",
+  "build.howto": "如何上传构建：1) 在登录页面登录 Steam（手机确认只需一次）；2) 填写游戏的 App ID；3) 点击“添加 depot”，会出现已填好 Depot ID 的一行（App ID + 1，之后依次 +2、+3…），然后选择已完成构建的文件夹；4) 点击“上传构建”。",
+  "build.app_id_tip": "您的游戏在 Steam 中的编号（可在 Steamworks 和商店页面网址中看到）。它不是 Depot ID。",
+  "build.description_tip": "给自己看的备注，仅显示在 Steamworks 的构建页面。",
+  "build.depots_tip": "Depot（仓库）是 Steam 服务器上存放游戏文件的“箱子”。一个游戏可以有多个（Windows、Linux、DLC），通常一个就够了。",
+  "depots.id_tip": "Depot 编号，由 Steamworks（SteamPipe → Depots）分配，通常为 App ID + 1（游戏 4390840 对应 4390841）。“添加 depot”会自动填入下一个编号；如果您的 ID 不同，请手动修改。",
+  "build.set_live_tip": "上传后立即将构建分配到分支。不勾选则可稍后在 Steamworks 构建页面分配。",
+  "build.docs": "Steamworks 文档",
+  "build.docs_upload": "向 Steam 上传构建",
+  "build.docs_depots": "Depot 与应用"
 }

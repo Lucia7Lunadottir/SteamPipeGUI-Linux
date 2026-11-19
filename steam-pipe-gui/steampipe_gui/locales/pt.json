@@ -132,5 +132,14 @@
   "log.clear": "Limpar",
   "log.save_failed": "Não foi possível salvar o registro: {error}",
   "quit.title": "Envio em andamento",
-  "quit.busy": "O steamcmd ainda está em execução. Parar e sair?"
+  "quit.busy": "O steamcmd ainda está em execução. Parar e sair?",
+  "build.howto": "Como enviar uma build: 1) entre no Steam na página de login (a confirmação no telemóvel só é necessária uma vez); 2) indique o App ID do jogo; 3) clique em «Adicionar depot» — aparece uma linha com o ID do depósito (App ID + 1, depois +2, +3…) — e escolha a pasta com a build pronta; 4) clique em «Enviar build».",
+  "build.app_id_tip": "O número do seu jogo no Steam (visível no Steamworks e no URL da página do jogo). Não é o ID do depósito.",
+  "build.description_tip": "Uma nota para si. Só aparece na página de builds do Steamworks.",
+  "build.depots_tip": "Um depósito (depot) é uma «caixa» com os ficheiros do jogo nos servidores do Steam. Um jogo pode ter vários (Windows, Linux, DLC); normalmente basta um.",
+  "depots.id_tip": "O número do depósito. É atribuído pelo Steamworks (SteamPipe → Depots), normalmente App ID + 1: 4390841 para o jogo 4390840. «Adicionar depot» preenche o número seguinte; se os seus ID forem outros, corrija à mão.",
+  "build.set_live_tip": "Atribuir logo a build enviada a um ramo. Sem a opção, pode fazê-lo mais tarde na página de builds do Steamworks.",
+  "build.docs": "Documentação do Steamworks",
+  "build.docs_upload": "Enviar uma build para o Steam",
+  "build.docs_depots": "Depósitos e aplicações"
 }

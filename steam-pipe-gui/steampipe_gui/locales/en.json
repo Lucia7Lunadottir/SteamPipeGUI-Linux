@@ -132,5 +132,14 @@
   "log.clear": "Clear",
   "log.save_failed": "Could not save the log: {error}",
   "quit.title": "Upload in progress",
-  "quit.busy": "steamcmd is still working. Stop it and quit?"
+  "quit.busy": "steamcmd is still working. Stop it and quit?",
+  "build.howto": "How to upload a build: 1) log in to Steam on the login page (phone confirmation is needed only once); 2) enter the game's App ID; 3) click “Add depot” — a row appears with the depot ID (App ID + 1, then +2, +3…) — and choose the folder with the finished build; 4) click “Upload build”.",
+  "build.app_id_tip": "Your game's number in Steam (shown in Steamworks and in the store page URL). It is not the depot ID.",
+  "build.description_tip": "A note for yourself. Visible only on the Steamworks builds page.",
+  "build.depots_tip": "A depot is a “box” with the game's files on Steam's servers. A game can have several (Windows, Linux, DLC); one is usually enough.",
+  "depots.id_tip": "The depot number. Steamworks assigns it (SteamPipe → Depots), usually App ID + 1: 4390841 for game 4390840. “Add depot” fills in the next number; if your IDs differ, correct it by hand.",
+  "build.set_live_tip": "Assign the uploaded build to a branch right away. Without the checkbox you can assign it later on the Steamworks builds page.",
+  "build.docs": "Steamworks documentation",
+  "build.docs_upload": "Uploading a build to Steam",
+  "build.docs_depots": "Depots and apps"
 }
